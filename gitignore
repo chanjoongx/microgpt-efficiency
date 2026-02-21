@@ -2,16 +2,9 @@
 __pycache__/
 *.pyc
 *.pyo
-*.pyd
 *.egg-info/
 dist/
 build/
-
-# dataset — downloaded automatically on first run
-input.txt
-
-# benchmark results — add manually after running
-results/*.txt
 
 # OS
 .DS_Store
