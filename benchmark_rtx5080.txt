@@ -1,0 +1,127 @@
+Loading dataset …
+  32033 docs  |  vocab size 27
+
+────────────────────────────────────────────────────────────
+  Backend: scalar
+────────────────────────────────────────────────────────────
+  step     1/1000  |  loss 3.3385  |     37.97 ms
+  step   100/1000  |  loss 3.5240  |     44.84 ms
+  step   200/1000  |  loss 2.5932  |     63.92 ms
+  step   300/1000  |  loss 2.2798  |     29.45 ms
+  step   400/1000  |  loss 2.6926  |     36.96 ms
+  step   500/1000  |  loss 2.2437  |     32.11 ms
+  step   600/1000  |  loss 2.5701  |     41.57 ms
+  step   700/1000  |  loss 2.6324  |     34.30 ms
+  step   800/1000  |  loss 2.3729  |     34.25 ms
+  step   900/1000  |  loss 2.6408  |     28.55 ms
+  step  1000/1000  |  loss 2.5290  |     23.20 ms
+
+  Generated names (10 samples, T=0.7):
+    kalen
+    aonn
+    nena
+    arecin
+    manan
+    kran
+    oreyon
+    aniye
+    tamine
+    rair
+
+────────────────────────────────────────────────────────────
+  Backend: numpy
+────────────────────────────────────────────────────────────
+  step     1/1000  |  loss 3.2791  |      0.36 ms
+  step   100/1000  |  loss 3.5187  |      0.16 ms
+  step   200/1000  |  loss 2.6484  |      0.16 ms
+  step   300/1000  |  loss 2.2893  |      0.14 ms
+  step   400/1000  |  loss 2.5252  |      0.14 ms
+  step   500/1000  |  loss 2.2895  |      0.15 ms
+  step   600/1000  |  loss 2.6766  |      0.15 ms
+  step   700/1000  |  loss 2.3449  |      0.15 ms
+  step   800/1000  |  loss 2.3415  |      0.15 ms
+  step   900/1000  |  loss 2.6718  |      0.15 ms
+  step  1000/1000  |  loss 2.5015  |      0.14 ms
+
+  Generated names (10 samples, T=0.7):
+    aenn
+    jiuea
+    
+    eoes
+    joraan
+    jirrece
+    aela
+    kaabio
+    aiauoa
+    kahai
+
+────────────────────────────────────────────────────────────
+  Backend: torch_cpu
+────────────────────────────────────────────────────────────
+  step     1/1000  |  loss 3.3029  |    201.23 ms
+  step   100/1000  |  loss 3.4423  |     42.78 ms
+  step   200/1000  |  loss 2.5356  |     38.76 ms
+  step   300/1000  |  loss 2.3989  |      0.80 ms
+  step   400/1000  |  loss 2.5082  |      0.81 ms
+  step   500/1000  |  loss 2.2400  |     71.70 ms
+  step   600/1000  |  loss 2.5923  |      0.85 ms
+  step   700/1000  |  loss 2.3153  |     47.55 ms
+  step   800/1000  |  loss 2.3025  |     48.23 ms
+  step   900/1000  |  loss 2.6245  |      0.82 ms
+  step  1000/1000  |  loss 2.5463  |      0.82 ms
+
+  Generated names (10 samples, T=0.7):
+    iyriden
+    keazon
+    belelos
+    hdoen
+    anba
+    yredoo
+    jawaon
+    kazi
+    seyaea
+    igreli
+
+────────────────────────────────────────────────────────────
+  Backend: torch_gpu
+────────────────────────────────────────────────────────────
+  step     1/1000  |  loss 3.2877  |    253.03 ms
+  step   100/1000  |  loss 3.4062  |      1.83 ms
+  step   200/1000  |  loss 2.6122  |      1.51 ms
+  step   300/1000  |  loss 2.5230  |      1.83 ms
+  step   400/1000  |  loss 2.6058  |      1.82 ms
+  step   500/1000  |  loss 2.2159  |      1.77 ms
+  step   600/1000  |  loss 2.8016  |      1.95 ms
+  step   700/1000  |  loss 2.3986  |      2.23 ms
+  step   800/1000  |  loss 2.3113  |      1.41 ms
+  step   900/1000  |  loss 2.6482  |      1.06 ms
+  step  1000/1000  |  loss 2.5264  |      1.10 ms
+
+  Generated names (10 samples, T=0.7):
+    raziea
+    merani
+    lebelo
+    sedit
+    onniann
+    emren
+    dala
+    riuta
+    kixecch
+    saniei
+
+=========================================================================
+  BENCHMARK SUMMARY
+=========================================================================
+Backend         Final Loss   Avg(last100)   Total(s)    Median ms   Speedup
+-------------------------------------------------------------------------
+  scalar        2.5290       2.3571         36.95       35.99       1.0x
+  numpy         2.5015       2.4292         0.15        0.15        251.7x
+  torch_cpu     2.5463       2.3737         18.77       0.83        2.0x
+  torch_gpu     2.5264       2.3842         1.99        1.80        18.6x
+=========================================================================
+
+  Speedup relative to scalar baseline:
+    numpy          251.7x  ████████████████████████████████████████████████████████████████████████████████
+    torch_cpu        2.0x  █
+    torch_gpu       18.6x  ██████████████████
+
