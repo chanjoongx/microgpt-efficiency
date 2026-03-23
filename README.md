@@ -17,6 +17,8 @@ The identical algorithm is implemented across four backends. Each one swaps out 
 Tested on **NVIDIA GeForce RTX 5080** · PyTorch 2.9.0+cu128 · Ubuntu 24.04  
 Dataset: names.txt (32,033 docs, vocab size 27) · seed 42
 
+![Benchmark Results](results/benchmark_charts.png)
+
 ### Median ms / step
 
 | Backend | 1,000 steps | 3,000 steps | 5,000 steps | 10,000 steps |
@@ -158,17 +160,23 @@ Every gradient formula includes a derivation comment. Reading the forward pass f
 
 ## Gradient verification
 
-All gradients in `numpy_backend.py` are verified against finite differences (`ε = 1e-5`). Errors are within float64 numerical precision (~1e-8):
+All gradients in `numpy_backend.py` are verified against finite differences (`ε = 1e-5`). Run the verification yourself:
+
+```bash
+python verify_gradients.py
+```
+
+Errors are within float64 numerical precision (~1e-8):
 
 ```
-wte     max_err = 2.98e-08  ✓
-wpe     max_err = 2.79e-08  ✓
-l0.wq   max_err = 0.00e+00  ✓
-l0.wk   max_err = 0.00e+00  ✓
-l0.wv   max_err = 0.00e+00  ✓
-l0.wo   max_err = 1.63e-11  ✓
-l0.fc1  max_err = 0.00e+00  ✓
-l0.fc2  max_err = 9.33e-12  ✓
+wte      max_err = 2.07e-09  ✓
+wpe      max_err = 2.01e-09  ✓
+l0.wq    max_err = 0.00e+00  ✓
+l0.wk    max_err = 0.00e+00  ✓
+l0.wv    max_err = 0.00e+00  ✓
+l0.wo    max_err = 6.58e-11  ✓
+l0.fc1   max_err = 0.00e+00  ✓
+l0.fc2   max_err = 6.33e-11  ✓
 ```
 
 ---
@@ -203,9 +211,10 @@ microgpt-efficiency/
 │   └── torch_backend.py       # PyTorch, cpu or cuda
 ├── data.py                    # dataset download + tokenisation (shared)
 ├── benchmark.py               # runs all backends, prints summary table
+├── verify_gradients.py        # finite-difference gradient checking
 ├── requirements.txt
 ├── LICENSE
-└── results/                   # benchmark output files
+└── results/                   # benchmark output files + charts
 ```
 
 ---
